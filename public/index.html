@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>XML & HL7 PARSER</title>
+</head>
+<body>
+
+    <section class="content">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="head py-3 text-center text-white">
+                                        <h3>XML & HL7 PARSER</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <form action="express_get">
+                                <div class="form p-3">
+                                    <div class="form-row my-3">
+                                        <div class="col-lg-4">
+                                            <label for="" class="form-control">File Format:</label>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <select name="format" id="" class="effect">
+                                                <option value="xml">XML</option>
+                                                <option value="hl7">HL7</option>
+                                            </select>
+                                            <span class="focus-border"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-row mt-2">
+                                        <div class="col-lg-12 form-group">
+                                            <label for="" class="form-control">File Content:</label>
+                                            <textarea name="file" id="" cols="30" rows="5" class="effect"></textarea>
+                                            <span class="focus-border"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-lg-4">
+                                            <input class="btn1" type="submit" value="Parse">
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <button type="button" class="btn1" data-toggle="modal" data-target="#staticBackdrop">
+                                                xml example
+                                            </button>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <button type="button" class="btn1" data-toggle="modal" data-target="#staticBackdrophl7">
+                                                hl7 example
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- XML Example - Modal -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">XML Example</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <textarea rows="10" style="width:100%; min-height: 100%!important;">
+                    <?xml version="1.0" encoding="UTF-8"?>
+                    <breakfast_menu>
+                        <food>
+                            <name>Belgian Waffles</name>
+                            <price>$5.95</price>
+                            <description>
+                                Two of our famous Belgian Waffles with plenty of real maple syrup
+                            </description>
+                            <calories>650</calories>
+                        </food>
+                        
+                        <food>
+                            <name>Strawberry Belgian Waffles</name>
+                            <price>$7.95</price>
+                            <description>
+                                Light Belgian waffles covered with strawberries and whipped cream
+                            </description>
+                            <calories>900</calories>
+                        </food>
+                        
+                        <food>
+                            <name>Berry-Berry Belgian Waffles</name>
+                            <price>$8.95</price>
+                            <description>
+                                Belgian waffles covered with assorted fresh berries and whipped cream
+                            </description>
+                            <calories>900</calories>
+                        </food>
+                        
+                        <food>
+                            <name>French Toast</name>
+                            <price>$4.50</price>
+                            <description>
+                                Thick slices made from our homemade sourdough bread
+                            </description>
+                            <calories>600</calories>
+                        </food>
+                        
+                        <food>
+                            <name>Homestyle Breakfast</name>
+                            <price>$6.95</price>
+                            <description>
+                                Two eggs, bacon or sausage, toast, and our ever-popular hash browns
+                            </description>
+                            <calories>950</calories>
+                        </food>
+                    </breakfast_menu>
+                </textarea>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- HL7 Example - Modal -->
+    <div class="modal fade" id="staticBackdrophl7" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">HL7 Example</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <textarea rows="10" style="width:100%; min-height: 100%!important;">
+                    MSH|^~\&|ADT1|MCM|FINGER|MCM|198808181126|SECURITY|ADT^A01|MSG00001|P|2.3.1EVN|A01|198808181123PID|1||PATID1234^5^M11^ADT1^MR^MCM~123456789^^^USSSA^SS||SMITH^WILLIAM^A^III||19610615|M||C|1200 N ELM STREET^^JERUSALEM^TN^99999?1020|GL|(999)999?1212|(999)999?3333||S||PATID12345001^2^M10^ADT1^AN^A|123456789|987654^NCNK1|1|SMITH^OREGANO^K|WI^WIFE||||NK^NEXT OF KINPV1|1|I|2000^2012^01||||004777^CASTRO^FRANK^J.|||SUR||||ADM|A0
+                </textarea>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+</body>
+</html>
